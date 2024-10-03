@@ -1,0 +1,6 @@
+---
+const { project } = Astro.props;
+import "../styles/card.css";
+---
+
+<a class="card" href={project.link}>{project.name}</a>

@@ -1,0 +1,18 @@
+html.dark {
+  background-color: #0d0950;
+  color: #fff !important;
+}
+
+.dark .nav-links a {
+  color: #fff !important;
+}
+
+html * {
+  font-size: 1em !important;
+  font-family: "Calibri", sans-serif !important;
+}
+
+article {
+  flex: 1;
+  overflow-y: auto;
+}

@@ -1,0 +1,24 @@
+---
+import Card from "../components/Card.astro";
+import MaintLayout from "../layouts/MaintLayout.astro";
+
+const projects = [
+  {
+    name: "Project 1",
+    description: "Description of Project 1",
+    link: "/projects/project1",
+  },
+  {
+    name: "Project 2",
+    description: "Description of Project 2",
+    link: "/projects/project2",
+  },
+];
+---
+
+<MaintLayout title="Projets">
+  <h1>Projects</h1>
+  <div class="card-container">
+    {projects.map((project) => <Card project={project} />)}
+  </div>
+</MaintLayout>

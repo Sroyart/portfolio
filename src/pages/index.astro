@@ -1,33 +1,29 @@
 ---
 // Component Imports
-import Counter from '../components/Counter.svelte';
+import HomeLayout from "../layouts/HomeLayout.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<Counter client:visible>
-				<h1>Hello, Svelte!</h1>
-			</Counter>
-		</main>
-	</body>
-</html>
+<HomeLayout title="Home">
+  <div class="container">
+    <div>
+      <p>
+        Diplômé d'un Mastère en Spécialisation Développement full stack à Sup de
+        Vinci, j'ai trois ans d'expérience en alternance en tant que développeur
+        full stack à la Gendarmerie Nationale. Je suis à présent à la recherche
+        de nouvelles opportunités professionnelles.
+      </p>
+    </div>
+    <div></div>
+  </div>
+</HomeLayout>
+
+<style>
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
