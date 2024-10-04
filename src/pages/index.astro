@@ -1,29 +1,41 @@
 ---
-// Component Imports
-import HomeLayout from "../layouts/HomeLayout.astro";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import MaintLayout from "../layouts/MaintLayout.astro";
 ---
 
-<HomeLayout title="Home">
+<MaintLayout title="Home">
   <div class="container">
-    <div>
-      <p>
-        Diplômé d'un Mastère en Spécialisation Développement full stack à Sup de
-        Vinci, j'ai trois ans d'expérience en alternance en tant que développeur
-        full stack à la Gendarmerie Nationale. Je suis à présent à la recherche
-        de nouvelles opportunités professionnelles.
-      </p>
+    <div class="content">
+      <div class="description">
+        <p>
+          Diplômé d'un Mastère en Spécialisation Développement full stack à Sup
+          de Vinci, j'ai trois ans d'expérience en alternance en tant que
+          développeur full stack à la Gendarmerie Nationale. Je suis à présent à
+          la recherche de nouvelles opportunités professionnelles.
+        </p>
+      </div>
+      <div class="image">fdfg</div>
     </div>
-    <div></div>
   </div>
-</HomeLayout>
+</MaintLayout>
 
 <style>
-  .center-content {
+  .container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 80%;
+  }
+  .description {
+    width: 40%;
+  }
+  .image {
+    width: 40%;
   }
 </style>
