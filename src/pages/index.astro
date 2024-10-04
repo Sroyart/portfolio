@@ -1,41 +1,59 @@
 ---
 import MaintLayout from "../layouts/MaintLayout.astro";
+import "../styles/global.css";
+import GitHubLogo from "../assets/github.svg";
+import GitHubLogoWhite from "../assets/github-white.svg";
+import LinkedInLogo from "../assets/linkedin.svg";
+import { Image } from "astro:assets";
 ---
 
 <MaintLayout title="Home">
-  <div class="container">
-    <div class="content">
-      <div class="description">
-        <p>
-          Diplômé d'un Mastère en Spécialisation Développement full stack à Sup
-          de Vinci, j'ai trois ans d'expérience en alternance en tant que
-          développeur full stack à la Gendarmerie Nationale. Je suis à présent à
-          la recherche de nouvelles opportunités professionnelles.
-        </p>
-      </div>
-      <div class="image">fdfg</div>
+  <div class="presentation">
+    <h1>Arthur IOUZALEN</h1>
+    <span>
+      Développeur full stack à la recherche de nouvelles opportunités
+      professionnelles
+    </span>
+    <div class="socials">
+      <a href="https://github.com/Sroyart" class="github" target="_blank">
+        <Image src={GitHubLogo} width="32" height="32" alt="GitHub" />
+      </a>
+      <a href="https://github.com/Sroyart" class="github-white" target="_blank">
+        <Image src={GitHubLogoWhite} width="32" height="32" alt="GitHub" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/arthur-iouzalen-342136194/"
+        target="_blank"
+      >
+        <Image src={LinkedInLogo} width="32" height="32" alt="LinkedIn" />
+      </a>
     </div>
   </div>
 </MaintLayout>
 
 <style>
-  .container {
+  .presentation {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
   }
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    max-width: 80%;
+  .presentation h1 {
+    font-size: 4rem;
+    margin: 0;
   }
-  .description {
-    width: 40%;
+  .presentation span {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
-  .image {
-    width: 40%;
+  :global(.dark) .github {
+    display: none;
+  }
+  .github-white {
+    display: none;
+  }
+  :global(.dark) .github-white {
+    display: contents;
   }
 </style>
