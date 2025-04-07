@@ -1,13 +1,13 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import GitHubLogo from "../assets/github.svg";
 import GitHubLogoWhite from "../assets/github-white.svg";
 import LinkedInLogo from "../assets/linkedin.svg";
 import { Image } from "astro:assets";
+import DarkLayout from "../layouts/DarkLayout.astro";
 ---
 
-<MainLayout title="Home">
+<DarkLayout title="Home">
   <div class="presentation">
     <h1>Arthur IOUZALEN</h1>
     <span>
@@ -36,7 +36,7 @@ import { Image } from "astro:assets";
       <a class="about" href="about">A propos</a>
     </div>
   </div>
-</MainLayout>
+</DarkLayout>
 
 <style>
   .presentation {

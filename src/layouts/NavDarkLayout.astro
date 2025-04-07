@@ -1,0 +1,16 @@
+---
+import Header from "../components/Header.astro";
+import Navigation from "../components/Navigation.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
+import MainLayout from "./MainLayout.astro";
+---
+
+<MainLayout>
+  <Header>
+    <Navigation />
+    <ThemeIcon />
+  </Header>
+  <article>
+    <slot />
+  </article>
+</MainLayout>
