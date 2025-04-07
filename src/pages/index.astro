@@ -1,5 +1,5 @@
 ---
-import MaintLayout from "../layouts/MaintLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import GitHubLogo from "../assets/github.svg";
 import GitHubLogoWhite from "../assets/github-white.svg";
@@ -7,29 +7,36 @@ import LinkedInLogo from "../assets/linkedin.svg";
 import { Image } from "astro:assets";
 ---
 
-<MaintLayout title="Home">
+<MainLayout title="Home">
   <div class="presentation">
     <h1>Arthur IOUZALEN</h1>
     <span>
       Développeur full stack à la recherche de nouvelles opportunités
       professionnelles
     </span>
-    <div class="socials">
-      <a href="https://github.com/Sroyart" class="github" target="_blank">
-        <Image src={GitHubLogo} width="32" height="32" alt="GitHub" />
-      </a>
-      <a href="https://github.com/Sroyart" class="github-white" target="_blank">
-        <Image src={GitHubLogoWhite} width="32" height="32" alt="GitHub" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/arthur-iouzalen-342136194/"
-        target="_blank"
-      >
-        <Image src={LinkedInLogo} width="32" height="32" alt="LinkedIn" />
-      </a>
+    <div class="presentation-links">
+      <div class="socials">
+        <a href="https://github.com/Sroyart" class="github" target="_blank">
+          <Image src={GitHubLogo} width="32" height="32" alt="GitHub" />
+        </a>
+        <a
+          href="https://github.com/Sroyart"
+          class="github-white"
+          target="_blank"
+        >
+          <Image src={GitHubLogoWhite} width="32" height="32" alt="GitHub" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/arthur-iouzalen-342136194/"
+          target="_blank"
+        >
+          <Image src={LinkedInLogo} width="32" height="32" alt="LinkedIn" />
+        </a>
+      </div>
+      <a class="about" href="about">A propos</a>
     </div>
   </div>
-</MaintLayout>
+</MainLayout>
 
 <style>
   .presentation {
@@ -55,5 +62,25 @@ import { Image } from "astro:assets";
   }
   :global(.dark) .github-white {
     display: contents;
+  }
+  .presentation-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  :global(.dark) .about {
+    background-color: white;
+    color: black !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-inline: 1.75rem;
+    border-radius: 20rem;
+  }
+  .presentation-links a {
+    text-decoration: none;
+    color: inherit;
   }
 </style>

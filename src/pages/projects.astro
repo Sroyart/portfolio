@@ -1,6 +1,6 @@
 ---
 import Card from "../components/Card.astro";
-import MaintLayout from "../layouts/MaintLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
 const projects = [
   {
@@ -16,9 +16,9 @@ const projects = [
 ];
 ---
 
-<MaintLayout title="Projets">
+<MainLayout title="Projets">
   <h1>Projects</h1>
   <div class="card-container">
     {projects.map((project) => <Card project={project} />)}
   </div>
-</MaintLayout>
+</MainLayout>
