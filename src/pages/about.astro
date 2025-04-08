@@ -1,5 +1,120 @@
 ---
 import NavDarkLayout from "../layouts/NavDarkLayout.astro";
+
+const about = [
+  {
+    company: "Direction Générale de la Gendarmerie Nationale",
+    position: "Alternance - Développeur full stack",
+    missions: [
+      `Ajout de fonctionnalités sur les sites intranets existants, modification du front (ReactJS
+TypeScript, tailwind), modification des routes API (NestJS) et création de micro services
+(Docker, NestJS, HonoJS, Elasticsearch)`,
+      `Création, déploiement et développement d'une application web permettant la gestion
+d'un portefeuille de projets`,
+      `Participation à la partie hébergement des applications web`,
+      `Participation au recrutement de nouveaux collaborateurs`,
+      `Formation de nouveaux apprentis`,
+      `Maquettage et participation au recueil du besoin et à la création du cahier des charges`,
+    ],
+    date: "2023 - 2024",
+  },
+  {
+    company: "Numeriquest",
+    position: "Stage - Développeur front end",
+    missions: [
+      `Participation au développement d’un site à destination d’un client en HTML CSS`,
+      `Création d’un site vitrine pour l’entreprise`,
+    ],
+    date: "nov. 2020",
+  },
+  {
+    company: "Société Générale",
+    position: "Stage - Développeur informatique",
+    missions: ["Formation au language JAVA"],
+    date: "déc. 2018 - janv. 2019",
+  },
+];
 ---
 
-<NavDarkLayout> s </NavDarkLayout>
+<NavDarkLayout>
+  <div class="about">
+    <h1>Experiences</h1>
+    {
+      about.map((item) => (
+        <span>
+          <span>{item.date}</span>
+          <div class="pointer" />
+          <div class="about-item">
+            <h3>{item.company}</h3>
+            <span>{item.position}</span>
+            <ul>
+              {item.missions.map((mission) => (
+                <li>{mission}</li>
+              ))}
+            </ul>
+          </div>
+        </span>
+      ))
+    }
+    <h1>Formations</h1>
+    {
+      about.map((item) => (
+        <span>
+          <span>{item.date}</span>
+          <div class="pointer" />
+          <div class="about-item">
+            <h3>{item.company}</h3>
+            <span>{item.position}</span>
+            <ul>
+              {item.missions.map((mission) => (
+                <li>{mission}</li>
+              ))}
+            </ul>
+          </div>
+        </span>
+      ))
+    }
+  </div>
+</NavDarkLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h3 {
+    margin: 0;
+  }
+  .about > span {
+    padding: 0 2rem;
+    position: relative;
+    width: 70%;
+  }
+  :global(.dark) .about > span {
+    border-left: 0.1rem solid var(--dark-text-color);
+  }
+  /* :global(.dark) .about > span:first-child {
+    border-image: linear-gradient(to top, white 50%, transparent 50%) 1 100%;
+  }
+  :global(.dark) .about > span:last-child {
+    border-image: linear-gradient(to bottom, white 50%, transparent 50%) 1 100%;
+  } */
+  :global(.dark) .pointer {
+    background-color: var(--dark-text-color);
+    color: var(--dark-text-color) !important;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 0.5rem;
+    left: -0.5rem;
+  }
+</style>

@@ -1,14 +1,21 @@
+:root {
+  --main-text-color: #000;
+  --dark-text-color: #fff;
+  --main-bg-color: #fff;
+  --dark-bg-color: #0d0950;
+}
+
 body {
   margin: 0;
 }
 
 html.dark {
-  background-color: #0d0950;
-  color: #fff !important;
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color) !important;
 }
 
 .dark a {
-  color: #fff !important;
+  color: var(--dark-text-color) !important;
 }
 
 a {
@@ -16,7 +23,7 @@ a {
   font-size: 1.1rem;
   font-weight: bold;
   transition: color 0.3s ease;
-  color: #000;
+  color: var(--main-text-color);
 }
 
 html * {
