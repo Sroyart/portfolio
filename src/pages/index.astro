@@ -1,10 +1,7 @@
 ---
 import "../styles/global.css";
-import GitHubLogo from "../assets/github.svg";
-import GitHubLogoWhite from "../assets/github-white.svg";
-import LinkedInLogo from "../assets/linkedin.svg";
-import { Image } from "astro:assets";
 import DarkLayout from "../layouts/DarkLayout.astro";
+import SocialsLink from "../components/SocialsLink.astro";
 ---
 
 <DarkLayout title="Home">
@@ -15,24 +12,7 @@ import DarkLayout from "../layouts/DarkLayout.astro";
       professionnelles
     </span>
     <div class="presentation-links">
-      <div class="socials">
-        <a href="https://github.com/Sroyart" class="github" target="_blank">
-          <Image src={GitHubLogo} width="32" height="32" alt="GitHub" />
-        </a>
-        <a
-          href="https://github.com/Sroyart"
-          class="github-white"
-          target="_blank"
-        >
-          <Image src={GitHubLogoWhite} width="32" height="32" alt="GitHub" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/arthur-iouzalen-342136194/"
-          target="_blank"
-        >
-          <Image src={LinkedInLogo} width="32" height="32" alt="LinkedIn" />
-        </a>
-      </div>
+      <SocialsLink />
       <a class="about" href="about">A propos</a>
     </div>
   </div>
