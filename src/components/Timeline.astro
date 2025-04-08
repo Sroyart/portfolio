@@ -1,0 +1,69 @@
+---
+type Props = {
+  title: string;
+  events: Array<{
+    date: string;
+    company: string;
+    position: string;
+    missions: Array<string>;
+  }>;
+};
+
+const { title, events } = Astro.props;
+---
+
+<>
+  <h1>{title}</h1>
+  {
+    events.map((event) => (
+      <span class="event">
+        <span>{event.date}</span>
+        <div class="pointer" />
+        <div class="about-event">
+          <h3>{event.company}</h3>
+          <span>{event.position}</span>
+          <ul>
+            {event.missions.map((mission) => (
+              <li>{mission}</li>
+            ))}
+          </ul>
+        </div>
+      </span>
+    ))
+  }
+</>
+
+<style>
+  h1 {
+    font-size: 4rem;
+  }
+  h3 {
+    margin: 0;
+  }
+  .event {
+    padding: 0 2rem;
+    position: relative;
+    width: 70%;
+  }
+  :global(.dark) .event {
+    border-left: 0.1rem solid var(--dark-text-color);
+  }
+  /* :global(.dark) .about > span:first-child {
+    border-image: linear-gradient(to top, white 50%, transparent 50%) 1 100%;
+  }
+  :global(.dark) .about > span:last-child {
+    border-image: linear-gradient(to bottom, white 50%, transparent 50%) 1 100%;
+  } */
+  :global(.dark) .pointer {
+    background-color: var(--dark-text-color);
+    color: var(--dark-text-color) !important;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 0.5rem;
+    left: -0.5rem;
+  }
+</style>
