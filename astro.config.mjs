@@ -5,4 +5,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   // Enable Svelte to support Svelte components.
   integrations: [],
+  site: "portfolio.arthur.iouzalen.com",
 });
