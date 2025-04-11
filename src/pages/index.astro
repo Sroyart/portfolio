@@ -5,26 +5,33 @@ import SocialsLink from "../components/SocialsLink.astro";
 ---
 
 <DarkLayout title="Home">
-  <div class="presentation">
-    <h1>Arthur IOUZALEN</h1>
-    <span>
-      Développeur full stack à la recherche de nouvelles opportunités
-      professionnelles
-    </span>
-    <div class="presentation-links">
-      <SocialsLink />
-      <a class="about" href="about">A propos</a>
+  <div class="presentation-container">
+    <div class="presentation">
+      <h1>Arthur IOUZALEN</h1>
+      <span>
+        Développeur full stack à la recherche de nouvelles opportunités
+        professionnelles
+      </span>
+      <div class="presentation-links">
+        <SocialsLink />
+        <a class="about" href="about">A propos</a>
+      </div>
     </div>
   </div>
 </DarkLayout>
 
 <style>
+  .presentation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-inline: 1.75rem;
+  }
   .presentation {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
   }
   .presentation h1 {
     font-size: 4rem;
@@ -44,18 +51,16 @@ import SocialsLink from "../components/SocialsLink.astro";
     display: contents;
   }
   .presentation-links {
-    display: flex;
-    align-items: center;
     gap: 1rem;
+    display: flex;
+    align-items: stretch;
   }
   :global(.dark) .about {
+    height: auto;
+    display: flex;
+    align-items: center;
     background-color: white;
     color: black !important;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding-inline: 1.75rem;
     border-radius: 20rem;
   }

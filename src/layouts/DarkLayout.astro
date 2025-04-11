@@ -5,7 +5,9 @@ import MainLayout from "./MainLayout.astro";
 
 <MainLayout>
   <header class="header">
-    <ThemeIcon />
+    <div class="icon">
+      <ThemeIcon />
+    </div>
   </header>
   <article>
     <slot />
@@ -14,6 +16,10 @@ import MainLayout from "./MainLayout.astro";
 
 <style>
   .header {
+    position: absolute;
+    width: 100%;
+  }
+  .icon {
     display: flex;
     align-items: center;
     padding: 0 1rem;
