@@ -4,31 +4,16 @@ import "../styles/navigation.css";
 const pathname = Astro.url.pathname.substring(1);
 ---
 
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a class={pathname === "about" ? "active" : ""} href="/about">About</a>
-  <a class={pathname === "CV" ? "active" : ""} href="/CV">CV</a>
+<div>
+  <section class="top-nav">
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-button-container" for="menu-toggle">
+      <div class="menu-button"></div>
+    </label>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a class={pathname === "about" ? "active" : ""} href="/about">About</a>
+      <a class={pathname === "CV" ? "active" : ""} href="/CV">CV</a>
+    </div>
+  </section>
 </div>
-
-<style>
-  .nav-links {
-    gap: 2rem;
-    align-items: center;
-    height: 100%;
-  }
-  .nav-links a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.2rem;
-  }
-  :global(.dark) .active {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color) !important;
-    border-radius: 1rem;
-    padding: 0.25rem 1rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(255, 255, 255, 0.1);
-    transition:
-      background-color 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-</style>
