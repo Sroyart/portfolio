@@ -132,7 +132,7 @@
     margin: 0;
     width: 100%;
     color: var(--main-text-color);
-    background-color: var(--main-bg-color);
+    background-color: var(--primary-bg-color);
   }
   .dark .menu > a {
     color: var(--dark-text-color);

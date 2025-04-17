@@ -55,15 +55,20 @@ import SocialsLink from "../components/SocialsLink.astro";
     display: flex;
     align-items: stretch;
   }
-  :global(.dark) .about {
+  .about {
     height: auto;
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--secondary-bg-color);
     color: black !important;
     padding-inline: 1.75rem;
     border-radius: 20rem;
   }
+  :global(.dark) .about {
+    background-color: var(--secondary-bg-color);
+    color: var(--dark-text-color);
+  }
+
   .presentation-links a {
     text-decoration: none;
     color: inherit;

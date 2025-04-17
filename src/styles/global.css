@@ -1,7 +1,8 @@
 :root {
   --main-text-color: #000;
   --dark-text-color: #fff;
-  --main-bg-color: #fff;
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #ededed;
   --dark-bg-color: #0d0950;
 }
 
