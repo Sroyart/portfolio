@@ -1,0 +1,17 @@
+---
+import NavDarkLayout from "../../../layouts/NavDarkLayout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { locale: "en", projectId: 0 } },
+    { params: { locale: "fr", projectId: 0 } },
+  ];
+}
+const params = Astro.params;
+---
+
+<NavDarkLayout title="Projet">
+  <h1>Project</h1>
+  <p>{params.projectId}</p>
+  <div class="card-container">project</div>
+</NavDarkLayout>
