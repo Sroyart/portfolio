@@ -7,10 +7,10 @@ export default defineConfig({
   site: "http://portfolio.arthur.iouzalen.com/",
   i18n: {
     locales: ["en", "fr"],
-    defaultLocale: "en",
+    defaultLocale: "fr",
 
     routing: {
-      prefixDefaultLocale: false,
+      prefixDefaultLocale: true,
     },
   },
 });
