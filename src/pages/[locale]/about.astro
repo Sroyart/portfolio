@@ -1,8 +1,12 @@
 ---
-import Timeline from "../components/Timeline.astro";
-import NavDarkLayout from "../layouts/NavDarkLayout.astro";
-import experiences from "../data/experiences.ts";
-import formations from "../data/formations.ts";
+import Timeline from "../../components/Timeline.astro";
+import NavDarkLayout from "../../layouts/NavDarkLayout.astro";
+import experiences from "../../data/experiences";
+import formations from "../../data/formations";
+
+export async function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "fr" } }];
+}
 ---
 
 <NavDarkLayout>

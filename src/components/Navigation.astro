@@ -1,5 +1,8 @@
 ---
 import "../styles/navigation.css";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const pathname = Astro.url.pathname.substring(1);
 ---
@@ -11,9 +14,11 @@ const pathname = Astro.url.pathname.substring(1);
       <div class="menu-button"></div>
     </label>
     <div class="menu">
-      <a href="/">Home</a>
-      <a class={pathname === "about" ? "active" : ""} href="/about">About</a>
-      <a class={pathname === "CV" ? "active" : ""} href="/CV">CV</a>
+      <a href={`/${lang}/`}>{t("nav.home")}</a>
+      <a class={pathname === "about" ? "active" : ""} href={`/${lang}/about/`}
+        >About</a
+      >
+      <a class={pathname === "CV" ? "active" : ""} href=`/${lang}/CV/`>CV</a>
       <!-- <a class={pathname === "Project" ? "active" : ""} href="/projects"
         >Projects</a
       > -->

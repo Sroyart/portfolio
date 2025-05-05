@@ -1,11 +1,11 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
+import NavDarkLayout from "../../../layouts/NavDarkLayout.astro";
 
 const id = Astro.params.project;
 ---
 
-<MainLayout title="Projet">
+<NavDarkLayout title="Projet">
   <h1>Project</h1>
   <p>{id}</p>
   <div class="card-container">project</div>
-</MainLayout>
+</NavDarkLayout>

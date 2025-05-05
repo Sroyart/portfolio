@@ -1,6 +1,6 @@
 ---
-import Card from "../components/Card.astro";
-import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../../components/Card.astro";
+import NavDarkLayout from "../../layouts/NavDarkLayout.astro";
 
 const projects = [
   {
@@ -16,9 +16,9 @@ const projects = [
 ];
 ---
 
-<MainLayout title="Projets">
+<NavDarkLayout title="Projets">
   <h1>Projects</h1>
   <div class="card-container">
     {projects.map((project) => <Card project={project} />)}
   </div>
-</MainLayout>
+</NavDarkLayout>

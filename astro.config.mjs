@@ -5,4 +5,12 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [],
   site: "http://portfolio.arthur.iouzalen.com/",
+  i18n: {
+    locales: ["en", "fr"],
+    defaultLocale: "en",
+
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
