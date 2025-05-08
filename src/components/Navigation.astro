@@ -1,10 +1,16 @@
 ---
 import "../styles/navigation.css";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { defaultLang, ui } from "../i18n/ui";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const pathname = Astro.url.pathname.substring(1);
+const pathname = Astro.url.pathname;
+
+const routes = [
+  { name: "nav.about", path: `/${lang}/about/` },
+  { name: "CV", path: `/${lang}/CV/` },
+];
 ---
 
 <div>
@@ -15,13 +21,18 @@ const pathname = Astro.url.pathname.substring(1);
     </label>
     <div class="menu">
       <a href={`/${lang}/`}>{t("nav.home")}</a>
-      <a class={pathname === "about" ? "active" : ""} href={`/${lang}/about/`}
-        >About</a
-      >
-      <a class={pathname === "CV" ? "active" : ""} href=`/${lang}/CV/`>CV</a>
-      <!-- <a class={pathname === "Project" ? "active" : ""} href="/projects"
-        >Projects</a
-      > -->
+      {
+        routes.map((route) => (
+          <a class={pathname === route.path ? "active" : ""} href={route.path}>
+            {console.log("path: " + pathname)}
+            {console.log(route.path)}
+            {console.log("active: " + (pathname === route.path))}
+            {route.name.slice(0, 4) === "nav."
+              ? t(route.name as keyof (typeof ui)[typeof defaultLang])
+              : route.name}
+          </a>
+        ))
+      }
     </div>
   </section>
 </div>
