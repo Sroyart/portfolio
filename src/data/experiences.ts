@@ -3,17 +3,21 @@ const experiences = [
     company: "Direction Générale de la Gendarmerie Nationale",
     position: "Alternance - Développeur full stack",
     missions: [
-      `Ajout de fonctionnalités sur les sites intranets existants, modification du front (ReactJS
-TypeScript, tailwind), modification des routes API (NestJS) et création de micro services
-(Docker, NestJS, HonoJS, Elasticsearch)`,
-      `Création, déploiement et développement d'une application web permettant la gestion
-d'un portefeuille de projets`,
-      `Participation à la partie hébergement des applications web`,
-      `Participation au recrutement de nouveaux collaborateurs`,
+      `Ajout de fonctionnalités sur les sites intranets existants, modification du front, modification des routes API et création de micro services`,
+      `Création, développement et déploiement d'une application web permettant la gestion d'un portefeuille de projets`,
+      `Hébergement des applications web`,
+      `Recrutement de nouveaux collaborateurs`,
       `Formation de nouveaux apprentis`,
       `Maquettage et participation au recueil du besoin et à la création du cahier des charges`,
     ],
-    date: "2023 - 2024",
+    date: "2021 - 2024",
+  },
+  {
+    company: "Implic’Action",
+    position:
+      "Projet développé dans le cadre d’un projet scolaire pour répondre aux besoins de l’association Implic’Action - Développeur full stack",
+    missions: ["Ajout de fonctionnalités frontend et backend"],
+    date: "Déc. 2023 - septembre. 2024",
   },
   {
     company: "Numeriquest",
@@ -22,13 +26,7 @@ d'un portefeuille de projets`,
       `Participation au développement d’un site à destination d’un client en HTML CSS`,
       `Création d’un site vitrine pour l’entreprise`,
     ],
-    date: "nov. 2020",
-  },
-  {
-    company: "Société Générale",
-    position: "Stage - Développeur informatique",
-    missions: ["Formation au language JAVA"],
-    date: "déc. 2018 - janv. 2019",
+    date: "Nov. 2020",
   },
 ];
 

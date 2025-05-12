@@ -3,6 +3,11 @@ import Timeline from "../../components/Timeline.astro";
 import NavDarkLayout from "../../layouts/NavDarkLayout.astro";
 import experiences from "../../data/experiences";
 import formations from "../../data/formations";
+import Skills from "../../components/Skills.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 export async function getStaticPaths() {
   return [{ params: { locale: "en" } }, { params: { locale: "fr" } }];
@@ -10,19 +15,18 @@ export async function getStaticPaths() {
 ---
 
 <NavDarkLayout>
-  <div class="about">
-    <Timeline title="Experiences" events={experiences} />
-    <Timeline title="Formations" events={formations} />
+  <div class="timeline">
+    <Skills />
+    <Timeline title={t("about.title.experiences")} events={experiences} />
+    <Timeline title={t("about.title.formations")} events={formations} />
   </div>
 </NavDarkLayout>
 
 <style>
-  .about {
+  .timeline {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
     padding-bottom: 10rem;
   }
 </style>
