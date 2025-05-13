@@ -56,9 +56,15 @@ const flag = {
   }
   .language-list li {
     padding: 0.2rem;
-    background-color: var(--tertiary-bg-color);
+    background-color: var(--primary-bg-color);
   }
   .language-list li:hover {
     background-color: var(--secondary-bg-color);
+  }
+  :global(.dark) .language-list li {
+    background-color: var(--dark-bg-color);
+  }
+  :global(.dark) .language-list li:hover {
+    background-color: var(--dark-secondary-bg-color);
   }
 </style>
