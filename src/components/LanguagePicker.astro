@@ -1,0 +1,64 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const flag = {
+  en: "🇬🇧",
+  fr: "🇫🇷",
+};
+---
+
+<div class="language-picker">
+  <ul class="language-list">
+    {
+      Object.entries(languages).map(([lang, label]) => (
+        <li>
+          <a href={`/${lang}/`}>{label}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <span>{flag[lang] + lang.charAt(0).toUpperCase() + lang.slice(1)}</span>
+</div>
+
+<style>
+  .language-picker {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  .language-list {
+    list-style-type: none;
+    margin: 0;
+    position: absolute;
+    right: 0%;
+    bottom: 100%;
+    max-height: 0%;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    padding: 0;
+    border: var(--secondary-bg-color) solid 0;
+    background-color: var(--secondary-bg-color);
+  }
+
+  .language-picker:hover .language-list {
+    border-radius: 0.5rem;
+    max-height: 4rem;
+    transition: 0.25s ease-in;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    border: var(--secondary-bg-color) 0.1rem solid;
+  }
+  .language-list li {
+    padding: 0.2rem;
+    background-color: var(--tertiary-bg-color);
+  }
+  .language-list li:hover {
+    background-color: var(--secondary-bg-color);
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import LanguagePicker from "../components/LanguagePicker.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import "../styles/global.css";
 const { title } = Astro.props;
@@ -16,4 +17,7 @@ const lang = getLangFromUrl(Astro.url);
   <body>
     <slot />
   </body>
+  <footer>
+    <LanguagePicker />
+  </footer>
 </html>
