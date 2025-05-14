@@ -8,18 +8,18 @@ import { Image } from "astro:assets";
 <div class="socials">
   <a href="https://github.com/Sroyart" class="github" target="_blank">
     <Image
+      height={32}
+      width={32}
       src={GitHubLogo}
-      width="32"
-      height="32"
       alt="GitHub"
       loading="eager"
     />
   </a>
   <a href="https://github.com/Sroyart" class="github-white" target="_blank">
     <Image
+      height={32}
+      width={32}
       src={GitHubLogoWhite}
-      width="32"
-      height="32"
       alt="GitHub"
       loading="eager"
     />
@@ -29,9 +29,9 @@ import { Image } from "astro:assets";
     target="_blank"
   >
     <Image
+      height={32}
+      width={32}
       src={LinkedInLogo}
-      width="32"
-      height="32"
       alt="LinkedIn"
       loading="eager"
     />
@@ -47,25 +47,5 @@ import { Image } from "astro:assets";
   }
   :global(.dark) .github-white {
     display: contents;
-  }
-  .presentation-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  :global(.dark) .about {
-    background-color: white;
-    color: black !important;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-inline: 1.75rem;
-    border-radius: 20rem;
-  }
-  .presentation-links a {
-    text-decoration: none;
-    color: inherit;
   }
 </style>
